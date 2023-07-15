@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<br><br>
+<h3  style="text-align:center">Add student to Class List</h3><br><br>
+
+<div class="input-group" style="text-align:center;margin:auto;display:block">
+
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul style="text-align:center;color:red;">
+            {% for message in messages %}
+            {{ message }}
+            <br>
+            {% endfor %}
+             </ul>
+        {% endif %}
+        {% endwith %}
+
+            {{ form.s_name.label }}<br>
+            {{ form.s_name(size=32) }}<br>
+            {% for error in form.s_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.s_id.label }}<br>
+            {{ form.s_id(size=50) }}<br>
+            {% for error in form.s_id.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.class_code.label }}<br>
+            {{ form.class_code(size=32) }}<br>
+            {% for error in form.class_code.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+    {% endblock %}

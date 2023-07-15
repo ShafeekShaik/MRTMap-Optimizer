@@ -1,0 +1,2 @@
+FLASK_APP=ayh.py
+FLASK_DEBUG=True

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 style="text-align:center"></h3>
+<br><br>
+<div class="input-group" style="margin-left: auto;margin-right: auto;width:40%;">
+
+</div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul style="text-align:center;color:red;">
+    {% for message in messages %}
+    {{ message }}
+    <br>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+
+<div class="container">
+    <h2 style="text-align:center;">Path Finder</h2>
+    <br><br>
+
+    <div class="input-group" style="text-align:center;margin:auto;display:block">
+
+      <form action="" method="post" novalidate>
+          {{ form.hidden_tag() }}
+          <p>
+              {% with messages = get_flashed_messages() %}
+              {% if messages %}
+              <ul style="text-align:center;color:red;">
+              {% for message in messages %}
+              {{ message }}
+              <br>
+              {% endfor %}
+              </ul>
+              {% endif %}
+              {% endwith %}
+  
+              {{ form.startpoint.label }}<br>
+              {{ form.startpoint(style="display: block;margin:auto;",size=32) }}<br>
+              {% for error in form.startpoint.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+          </p>
+          <p>
+              {{ form.endpoint.label }}<br>
+              {{ form.endpoint(size=32) }}<br>
+              {% for error in form.endpoint.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+          </p>
+          <p>{{ form.submit() }}</p>
+      </form>
+
+      {{ path }}
+
+  </div>
+  
+
+
+{% endblock %}
