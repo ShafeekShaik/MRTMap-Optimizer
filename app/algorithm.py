@@ -144,8 +144,7 @@ def visualize_graph(graph, shortest_path):
     plt.show()
 
 
-csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/app/mrt.csv"
-
+csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/MRTMap-Optimizer/app/mrt.csv"
 graph = Graph(csv_file)
 
 def short_path(start,end):
