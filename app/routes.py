@@ -6,24 +6,34 @@ from app.models import User, Students, Attendance
 from flask import request
 from werkzeug.urls import url_parse
 from app import db
-from app.algorithm import short_path
+from app.algorithm import short_path_finder
+import csv
+
+mrt_names= []
+csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/MRTMap-Optimizer/app/mrt.csv"
+with open(csv_file, 'r') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        mrt_names.append(row['Source'])
+mrt_names = list(dict.fromkeys(mrt_names))
+
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     form = PathForm()
+    searched=False
     if request.method == 'POST':
         startpoint = request.values.get('startpoint')  # Your form's
         endpoint = request.values.get('endpoint')  # input names
         print(startpoint)
         print(endpoint)
-        
-        path = short_path(startpoint, endpoint)
+        searched=True
+        path = short_path_finder(startpoint, endpoint)
     else:
-        path=""
-        
+        path = ""
 
-    return render_template('index.html', title='Home', form=form, path=path)
+    return render_template('index.html', title='Home', form=form, path=path, mrt_names=mrt_names,searched=searched)
 
 
 @app.route('/whosnothere')
@@ -101,6 +111,9 @@ def classlist():
     student = Students.query.all()
     return render_template('classlist.html', students=student)
 
+@app.route('/short_path')
+def short_path():
+    return render_template('shortest_path_map.html')
 
 @app.route('/delstudent/<s_id>')
 def delstudent(s_id):

@@ -2,64 +2,81 @@ import sys
 import csv
 import matplotlib.pyplot as plt
 import networkx as nx
+import folium
  
 class Graph(object):
     def __init__(self, csv_file):
-        self.nodes = self.read_nodes_from_csv(csv_file)
+        self.nodes = set()
+        self.node_coordinates = {}
         self.graph = self.construct_graph(csv_file)
-        
-    def read_nodes_from_csv(self, csv_file):
-        nodes = set()
-        #node_coordinates = {}
-        with open(csv_file, 'r') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                source = row['Source']
-                target = row['Target']
-                nodes.add(source)
-                nodes.add(target)
-                #node_coordinates[source] = (float(row['Source_X']), float(row['Source_Y']))
-                # You can set default coordinates for target nodes if needed
-                #node_coordinates.setdefault(target, (0.0, 0.0))
-        return list(nodes)
-        
+
     def construct_graph(self, csv_file):
         graph = {}
-        for node in self.nodes:
-            
-            graph[node] = {}
 
         with open(csv_file, 'r') as csvfile:
-            reader = csv.DictReader(csvfile)
+            reader = csv.reader(csvfile)
+            next(reader)  # Skip the first row (column headers)
             for row in reader:
-                source = row['Source']
-                target = row['Target']
-                weight = int(row['Weight'])
+                node = row[0]
+                neighbor = row[1]
+                weight = int(row[2])
+                node_x = float(row[3])
+                node_y = float(row[4])
+                walk = row[5]
 
-                if source not in graph:
-                    graph[source] = {}
-                if target not in graph:
-                    graph[target] = {}
+                self.nodes.add(node)
+                #self.nodes.add(neighbor)
+                self.node_coordinates[node] = (node_x, node_y)
+                #self.node_coordinates[neighbor] = (node_x, node_y)
+                
+                if node not in graph:
+                    graph[node] = {}
+                if neighbor not in graph:
+                    graph[neighbor] = {}
 
-                graph[source][target] = weight
-                graph[target][source] = weight
+                graph[node][neighbor] = {"weight": weight, "walk": walk}
+                graph[neighbor][node] = {"weight": weight, "walk": walk}
+
         return graph
+        
+    # def construct_graph(self, csv_file):
+        # graph = {}
+        # for node in self.nodes:
+            
+            # graph[node] = {}
+
+        # with open(csv_file, 'r') as csvfile:
+            # reader = csv.DictReader(csvfile)
+            # for row in reader:
+                # source = row['Source']
+                # target = row['Target']
+                # weight = int(row['Weight'])
+
+                # if source not in graph:
+                    # graph[source] = {}
+                # if target not in graph:
+                    # graph[target] = {}
+
+                # graph[source][target] = weight
+                # graph[target][source] = weight
+        # return graph
     
     def get_nodes(self):
-        "Returns the nodes of the graph."
         return self.nodes
-    
+
     def get_outgoing_edges(self, node):
-        "Returns the neighbors of a node."
         connections = []
-        for out_node in self.nodes:
-            if self.graph[node].get(out_node, False) != False:
-                connections.append(out_node)
+        if node in self.graph:
+            connections = list(self.graph[node].keys())
         return connections
     
     def value(self, node1, node2):
-        "Returns the value of an edge between two nodes."
-        return self.graph[node1][node2]
+        if node1 in self.graph and node2 in self.graph[node1]:
+            return self.graph[node1][node2]["weight"], self.graph[node1][node2]["walk"]
+        else:
+            return None, None
+
+    
         
 def dijkstra_algorithm(graph, start_node):
     unvisited_nodes = list(graph.get_nodes())
@@ -90,7 +107,7 @@ def dijkstra_algorithm(graph, start_node):
         # The code block below retrieves the current node's neighbors and updates their distances
         neighbors = graph.get_outgoing_edges(current_min_node)
         for neighbor in neighbors:
-            tentative_value = shortest_path[current_min_node] + graph.value(current_min_node, neighbor)
+            tentative_value = shortest_path[current_min_node] + graph.value(current_min_node, neighbor)[0]
             if tentative_value < shortest_path[neighbor]:
                 shortest_path[neighbor] = tentative_value
                 # We also update the best path to the current node
@@ -144,17 +161,90 @@ def visualize_graph(graph, shortest_path):
     plt.show()
 
 
-csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/app/mrt.csv"
 
-graph = Graph(csv_file)
+def visualize_graph_folium(graph, shortest_path):
+    G = nx.Graph()
 
-def short_path(start,end):
-    start_node = start
-    target_node = end
-    previous_nodes, shortest_path = dijkstra_algorithm(graph=graph, start_node = start_node)
-    shortest_path = print_result(previous_nodes, shortest_path, start_node, target_node)
-    return shortest_path
+    for node in graph.get_nodes():
+        G.add_node(node)
 
+    for source in graph.get_nodes():
+        for target in graph.get_outgoing_edges(source):
+            G.add_edge(source, target, weight=graph.value(source, target)[0])
+
+    # Convert the set of nodes to a list
+    nodes_list = list(graph.get_nodes())
+    coordinates = list(graph.node_coordinates.values())
+    average_lat = sum(lat for lat, _ in coordinates) / len(coordinates)
+    average_lon = sum(lon for _, lon in coordinates) / len(coordinates)
+
+    # Create a Folium map centered at the average coordinates
+    m = folium.Map(location=[average_lat, average_lon], zoom_start=14)
+
+    # Create a Folium map centered at the first node coordinates
+    #m = folium.Map(location=list(graph.node_coordinates.values())[0], zoom_start=14)
+
+    # Iterate over the edges and add them to the map
+    for source, target in G.edges:
+        if source in shortest_path and target in shortest_path:
+            source_coordinates = graph.node_coordinates[source]
+            target_coordinates = graph.node_coordinates[target]
+            weight, walk = graph.value(source, target)
+
+            # Set color based on the "walk" attribute
+            color = 'green' if walk == 'Y' else 'red' if walk == 'N' else 'gray'
+
+            folium.PolyLine(locations=[source_coordinates, target_coordinates], color=color).add_to(m)
+
+    # Iterate over the nodes and add them to the map
+    for node in nodes_list:
+        if node in shortest_path:
+            color = 'red'
+            node_coordinates = graph.node_coordinates[node]
+            label = folium.Html(f'<b>{node}</b>', script=True)
+            popup = folium.Popup(label, max_width=150)
+            folium.Marker(location=node_coordinates, icon=folium.Icon(color=color), popup=popup).add_to(m)
+            folium.Marker(location=node_coordinates, icon=folium.DivIcon(html=f'<b>{node}</b>', icon_size=(30, 10))).add_to(m)
+
+    return m
+    
+    
+def visualizeshort_graph_folium(graph, shortest_path):
+    G = nx.Graph()
+
+    for node in graph.get_nodes():
+        G.add_node(node)
+
+    for source in graph.get_nodes():
+        for target in graph.get_outgoing_edges(source):
+            G.add_edge(source, target, weight=graph.value(source, target))
+
+    # Convert the set of nodes to a list
+    nodes_list = list(graph.get_nodes())
+
+    # Create a Folium map centered at the first node coordinates
+    m = folium.Map(location=list(graph.node_coordinates.values())[0], zoom_start=14)
+    
+
+    # Iterate over the edges and add them to the map
+    for source, target in G.edges:
+        if source in shortest_path and target in shortest_path:
+            source_coordinates = graph.node_coordinates[source]
+            target_coordinates = graph.node_coordinates[target]
+            color = 'red' if (source in shortest_path and target in shortest_path) else 'gray'
+            folium.PolyLine(locations=[source_coordinates, target_coordinates], color=color).add_to(m)
+
+    # Iterate over the nodes and add them to the map
+    for node in nodes_list:
+        if node in shortest_path:
+            color = 'red'
+            node_coordinates = graph.node_coordinates[node]
+            label = folium.Html(f'<b>{node}</b>', script=True)
+            popup = folium.Popup(label, max_width=150)
+            folium.Marker(location=node_coordinates, icon=folium.Icon(color=color), popup=popup).add_to(m)
+            folium.Marker(location=node_coordinates, icon=folium.DivIcon(html=f'<b>{node}</b>', icon_size=(30, 10))).add_to(m)
+
+    return m
 
 
 
@@ -180,6 +270,7 @@ def short_path(start,end):
 # nodes = graph.get_nodes()
 # for i in nodes:
     # print(i)
+    
 #These two are where to input the start and end nodes should be the main concern
 # node = 'CC10 DT26 MacPherson'  # Replace 'A' with the desired node
 
@@ -192,3 +283,30 @@ def short_path(start,end):
 #print_result(previous_nodes, shortest_path, start_node, target_node)
 # print(shortest_path)
 # visualize_graph(graph,shortest_path)
+
+# csv_file = "mrt.csv"
+# graph = Graph(csv_file)
+# # for node, coordinates in graph.node_coordinates.items():
+#     # print(f"Node: {node}, Coordinates: {coordinates}")
+# start_node = "NE7 DT12 Little India"
+# target_node = "DT33 Tampines East"
+# previous_nodes, shortest_path = dijkstra_algorithm(graph=graph, start_node=start_node)
+# shortest_path = print_result(previous_nodes, shortest_path, start_node, target_node)
+# print(shortest_path)
+# m = visualize_graph_folium(graph, shortest_path)
+# m.save("shortest_path_map.html")
+
+csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/MRTMap-Optimizer/app/mrt.csv"
+
+graph = Graph(csv_file)
+
+
+def short_path_finder(start,end):
+    start_node = start
+    target_node = end
+    previous_nodes, shortest_path = dijkstra_algorithm(graph=graph, start_node = start_node)
+    shortest_path = print_result(previous_nodes, shortest_path, start_node, target_node)
+    m = visualize_graph_folium(graph, shortest_path)
+    m.save("app/templates/shortest_path_map.html")
+    return shortest_path
+

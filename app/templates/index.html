@@ -20,7 +20,6 @@
 
 <div class="container">
     <h2 style="text-align:center;">Path Finder</h2>
-    <br><br>
 
     <div class="input-group" style="text-align:center;margin:auto;display:block">
 
@@ -39,14 +38,14 @@
               {% endwith %}
   
               {{ form.startpoint.label }}<br>
-              {{ form.startpoint(style="display: block;margin:auto;",size=32) }}<br>
+              {{ form.startpoint(style="display: block;margin:auto;",size=32) }}
               {% for error in form.startpoint.errors %}
               <span style="color: red;">[{{ error }}]</span>
               {% endfor %}
           </p>
           <p>
               {{ form.endpoint.label }}<br>
-              {{ form.endpoint(size=32) }}<br>
+              {{ form.endpoint(size=32) }}
               {% for error in form.endpoint.errors %}
               <span style="color: red;">[{{ error }}]</span>
               {% endfor %}
@@ -54,10 +53,17 @@
           <p>{{ form.submit() }}</p>
       </form>
 
-      {{ path }}
+      <br>
+
+
+<!-- {% include 'shortest_path_map.html' %} -->
 
   </div>
-  
+              {% if searched %}
+              <embed type="text/html" src="{{ url_for('short_path') }}"  style=padding:10; width="1500px" height="500" >
+              {% endif %}
 
+
+    {{ path }}
 
 {% endblock %}

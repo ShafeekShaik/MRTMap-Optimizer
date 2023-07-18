@@ -1,176 +1,201 @@
-Source,Target,Weight
-BP10 Fajar,BP11 Segar,1
-BP11 Segar,BP12 Jelapang,1
-BP12 Jelapang,BP13 Senja,1
-BP13 Senja,BP6 DT1 Bukit Panjang,1
-BP2 South View,BP3 Keat Hong,1
-BP3 Keat Hong,BP4 Teck Whye,1
-BP4 Teck Whye,BP5 Phoenix,2
-BP5 Phoenix,BP6 DT1 Bukit Panjang,1
-BP6 DT1 Bukit Panjang,BP7 Petir,1
-BP7 Petir,BP8 Pending,1
-BP8 Pending,BP9 Bangkit,1
-BP9 Bangkit,BP10 Fajar,1
-NE1 CC29 HarbourFront,EW16 NE3 Outram Park,3
-EW16 NE3 Outram Park,NE4 DT19 Chinatown,2
-NE4 DT19 Chinatown,NE5 Clarke Quay,2
-NE5 Clarke Quay,NS24 NE6 CC1 Dhoby Ghaut,2
-NS24 NE6 CC1 Dhoby Ghaut,NE7 DT12 Little India,2
-NE7 DT12 Little India,NE8 Farrer Park,2
-NE8 Farrer Park,NE9 Boon Keng,2
-NE9 Boon Keng,NE10 Potong Pasir,2
-NE10 Potong Pasir,NE11 Woodleigh,2
-NE11 Woodleigh,NE12 CC13 Serangoon,2
-NE12 CC13 Serangoon,NE13 Kovan,3
-NE13 Kovan,NE14Hougang,2
-NE14 Hougang,NE15 Buangkok,2
-NE15 Buangkok,NE16 STC Sengkang,3
-NE16 STC Sengkang,NE17 PTC Punggol,1
-BP6 DT1 Bukit Panjang,DT2 Cashew,2
-DT2 Cashew,DT3 Hillview,2
-DT3 Hillview,DT5 Beauty World,4
-DT5 Beauty World,DT6 King Albert Park,2
-DT6 King Albert Park,DT7 Sixth Avenue,2
-DT7 Sixth Avenue,DT8 Tan Kah Kee,2
-DT8 Tan Kah Kee,CC19 DT9 Botanic Gardens,2
-CC19 DT9 Botanic Gardens,DT10 Stevens,2
-DT10 Stevens,NS21 DT11 Newton,2
-NS21 DT11 Newton,NE7 DT12 Little India,2
-NE7 DT12 Little India,DT13 Rochor,1
-DT13 Rochor,EW12 DT14 Bugis,2
-EW12 DT14 Bugis,CC4DT15 Promenade,2
-CC4 DT15 Promenade,CE1 DT16 Bayfront,2
-CE1 DT16Bayfront,DT17 Downtown,2
-DT17 Downtown,DT18 Telok Ayer,1
-DT18 Telok Ayer,NE4 DT19 Chinatown,1
-CC19 DT9 Botanic Gardens,DT20 Fort Canning,19
-DT20 Fort Canning,DT21 Bencoolen,2
-DT21 Bencoolen,DT22 Jalan Besar,2
-DT22 Jalan Besar,DT23 Bendemeer,2
-DT23 Bendemeer,DT24 Geylang Bahru,2
-DT24 Geylang Bahru,DT25 Mattar,2
-DT25 Mattar,CC10 DT26 MacPherson,2
-CC10 DT26 MacPherson,DT27 Ubi,2
-DT27 Ubi,DT28 Kaki Bukit,2
-DT28 Kaki Bukit,DT29 Bedok North,2
-DT29 Bedok North,DT30 Bedok Reservoir,2
-DT30 Bedok Reservoir,DT31 Tampines West,2
-DT31 Tampines West,EW2 DT32 Tampines,2
-EW2 DT32 Tampines,DT33 Tampines East,2
-DT33 Tampines East,DT34 Upper Changi,3
-DT34 Upper Changi,CG1 DT35 Expo,2
-NS1 EW24 Jurong East,NS2 Bukit Batok,3
-NS2 Bukit Batok,NS3 Bukit Gombak,2
-NS3 Bukit Gombak,NS4 BP1 Choa Chu Kang,4
-NS4 BP1 Choa Chu Kang,NS5 Yew Tee,2
-NS5 Yew Tee,NS7 Kranji,5
-NS7 Kranji,NS8 Marsiling,2
-NS8 Marsiling,NS9 Woodlands,3
-NS9 Woodlands,NS10 Admiralty,2
-NS10 Admiralty,NS11 Sembawang,3
-NS11 Sembawang,NS13 Yishun,4
-NS13 Yishun,NS14 Khatib,2
-NS14 Khatib,NS15 Yio Chu Kang,6
-NS15 Yio Chu Kang,NS16 Ang Mo Kio,2
-NS16 Ang Mo Kio,NS17 CC15 Bishan,2
-NS17 CC15 Bishan,NS18 Braddell,2
-NS18 Braddell,NS19 Toa Payoh,2
-NS19 Toa Payoh,NS20 Novena,2
-NS20 Novena,NS21 DT11 Newton,2
-NS21 DT11 Newton,NS22 Orchard,2
-NS22 Orchard,NS23 Somerset,2
-NS23 Somerset,NS24 NE6 CC1 Dhoby Ghaut,1
-NS24 NE6 CC1 Dhoby Ghaut,NS25 EW13 City Hall,2
-NS25 EW13 City Hall,NS26 EW14 Raffles Place,2
-NS26 EW14 Raffles Place,NS27 CE2 Marina Bay,2
-NS27 CE2 Marina Bay,NS28 Marina South Pier,2
-NE17 PTC Punggol,PE1 Cove,4
-PE1 Cove,PE2 Meridian,1
-PE2 Meridian,PE3 Coral Edge,2
-PE3 Coral Edge,PE4 Riviera,1
-PE4 Riviera,PE5 Kadaloor,2
-PE5 Kadaloor,PE6 Oasis,1
-PE6 Oasis,PE7 Damai,2
-PE7 Damai,NE17 PTC Punggol,4
-NE17 PTC Punggol,PW1 Sam Kee,2
-PW1 Sam Kee,PW3 Punggol Point,2
-PW3 Punggol Point,PW4 Samudera,1
-PW4 Samudera,PW5 Nibong,1
-PW5 Nibong,PW6 Sumang,1
-PW6 Sumang,PW7 Soo Teck,1
-PW7 Soo Teck,NE17 PTC Punggol,3
-NE16 STC Sengkang,SE1 Compassvale,6
-SE1 Compassvale,SE2 Rumbia,1
-SE2 Rumbia,SE3 Bakau,1
-SE3 Bakau,SE4 Kangkar,1
-SE4 Kangkar,SE5 Ranggung,1
-SE5 Ranggung,NE16 STC Sengkang,6
-NE16 STC Sengkang,SW1 Cheng Lim,4
-SW1 Cheng Lim,SW2 Farmway,2
-SW2 Farmway,SW3 Kupang,1
-SW3 Kupang,SW4 Thanggam,1
-SW4 Thanggam,SW5 Fernvale,1
-SW5 Fernvale,SW6 Layar,2
-SW6 Layar,SW7 Tongkang,1
-SW7 Tongkang,SW8 Renjong,1
-SW8 Renjong,NE16 STC Sengkang,4
-NS24 NE6 CC1 Dhoby Ghaut,CC2 Bras Basah,2
-CC2 Bras Basah,CC3 Esplanade,2
-CC3 Esplanade,CC4 DT15 Promenade,2
-CC4 DT15 Promenade,CC5 Nicoll Highway,2
-CC5 Nicoll Highway,CC6 Stadium,2
-CC6 Stadium,CC7 Mountbatten,2
-CC7 Mountbatten,CC8 Dakota,2
-CC8 Dakota,EW8 CC9 Paya Lebar,2
-EW8 CC9 Paya Lebar,CC10 DT26 MacPherson,2
-CC10 DT26 MacPherson,CC11 Tai Seng,2
-CC11 Tai Seng,CC12 Bartley,2
-CC12 Bartley,NE12 CC13 Serangoon,3
-NE12 CC13 Serangoon,CC14 Lorong Chuan,2
-NS17 CC15 Bishan,NS17 CC15 Bishan,0
-NS17 CC15 Bishan,CC16 Marymount,3
-CC16 Marymount,CC17 Caldecott,2
-CC19 DT9 Botanic Gardens,CC19 DT9 Botanic Gardens,0
-CC19 DT9 Botanic Gardens,CC20 Farrer Road,2
-CC20 Farrer Road,CC21 Holland Village,3
-CC21 Holland Village,EW21 CC22 Buona Vista,2
-EW21 CC22 Buona Vista,CC23 one-north,2
-CC23 one-north,CC24 Kent Ridge,2
-CC24 Kent Ridge,CC25 Haw Par Villa,2
-CC25 Haw Par Villa,CC26 Pasir Panjang,2
-CC26 Pasir Panjang,CC27 Labrador Park,3
-CC27 Labrador Park,CC28 Telok Blangah,2
-CC28 Telok Blangah,NE1 CC29 HarbourFront,2
-EW1 Pasir Ris,EW2 DT32 Tampines,2
-EW2 DT32 Tampines,EW3 Simei,3
-EW3 Simei,EW4 Tanah Merah,3
-EW4 Tanah Merah,EW5 Bedok,3
-EW5 Bedok,EW6 Kembangan,2
-EW6 Kembangan,EW7 Eunos,2
-EW7 Eunos,EW8 CC9 Paya Lebar,2
-EW8 CC9 Paya Lebar,EW9 Aljunied,2
-EW9 Aljunied,EW10 Kallang,2
-EW10 Kallang,EW11 Lavender,2
-EW11 Lavender,EW12 DT14 Bugis,2
-EW12 DT14 Bugis,NS25 EW13 City Hall,2
-NS25 EW13 City Hall,NS26 EW14 Raffles Place,2
-NS26 EW14 Raffles Place,EW15 Tanjong Pagar,2
-EW15 Tanjong Pagar,EW16 NE3 Outram Park,2
-EW16 NE3 Outram Park,EW17 Tiong Bahru,2
-EW17 Tiong Bahru,EW18 Redhill,2
-EW18 Redhill,EW19 Queenstown,2
-EW19 Queenstown,EW20 Commonwealth,2
-EW20 Commonwealth,EW21 CC22 Buona Vista,2
-EW21 CC22 Buona Vista,EW22 Dover,2
-EW22 Dover,EW23 Clementi,3
-EW23 Clementi,NS1 EW24 Jurong East,4
-NS1 EW24 Jurong East,EW25 Chinese Garden,2
-EW25 Chinese Garden,EW26 Lakeside,2
-EW26 Lakeside,EW27 Boon Lay,3
-EW27 Boon Lay,EW28 Pioneer,2
-EW28 Pioneer,EW29 Joo Koon,4
-EW29 Joo Koon,EW30 Gul Circle,3
-EW30 Gul Circle,EW31 Tuas Crescent,2
-EW31 Tuas Crescent,EW32 Tuas West Road,2
-EW32 Tuas West Road,EW33 Tuas Link,1
-DT13 Rochor,DT22 Jalan Besar,1
+Source,Target,Weight,X,Y,Walk
+BP10 Fajar,BP11 Segar,1,1.384520796,103.7708268,N
+BP11 Segar,BP12 Jelapang,1,1.387772131,103.7696171,N
+BP12 Jelapang,BP13 Senja,1,1.386703025,103.7645235,N
+BP13 Senja,BP6 DT1 Bukit Panjang,1,1.382692296,103.7623879,N
+BP2 South View,BP3 Keat Hong,1,1.380298287,103.7453173,N
+BP3 Keat Hong,BP4 Teck Whye,1,1.378602766,103.7490799,N
+BP4 Teck Whye,BP5 Phoenix,2,1.376684679,103.7537352,N
+BP5 Phoenix,BP6 DT1 Bukit Panjang,1,1.378618844,103.7580559,N
+BP6 DT1 Bukit Panjang,BP7 Petir,1,1.377909898,103.763034,N
+BP7 Petir,BP8 Pending,1,1.377750334,103.7666882,N
+BP8 Pending,BP9 Bangkit,1,1.376142883,103.7712881,N
+BP9 Bangkit,BP10 Fajar,1,1.380017897,103.7726667,N
+NE1 CC29 HarbourFront,EW16 NE3 TE17 Outram Park,3,1.26547264,103.821446,N
+EW16 NE3 TE17 Outram Park,NE4 DT19 Chinatown,2,1.279764543,103.8395732,N
+NE4 DT19 Chinatown,NE5 Clarke Quay,2,1.284359578,103.8434242,N
+NE5 Clarke Quay,NS24 NE6 CC1 Dhoby Ghaut,2,1.288386024,103.8465519,N
+NS24 NE6 CC1 Dhoby Ghaut,NE7 DT12 Little India,2,1.298701307,103.8461119,N
+NE7 DT12 Little India,NE8 Farrer Park,2,1.307198223,103.8485807,N
+NE8 Farrer Park,NE9 Boon Keng,2,1.31235984,103.8541717,N
+NE9 Boon Keng,NE10 Potong Pasir,2,1.319395706,103.861679,N
+NE10 Potong Pasir,NE11 Woodleigh,2,1.331379525,103.869046,N
+NE11 Woodleigh,NE12 CC13 Serangoon,2,1.339190046,103.8708081,N
+NE12 CC13 Serangoon,NE13 Kovan,3,1.349707875,103.8735637,N
+NE13 Kovan,NE14 Hougang,2,1.360214,103.884864,N
+NE14 Hougang,NE15 Buangkok,2,1.371292292,103.8923636,N
+NE15 Buangkok,NE16 STC Sengkang,3,1.382877858,103.8931042,N
+NE16 STC Sengkang,NE17 PTC Punggol,1,1.391694626,103.8954664,N
+BP6 DT1 Bukit Panjang,DT2 Cashew,2,1.377909898,103.763034,N
+DT2 Cashew,DT3 Hillview,2,1.369369831,103.764714,N
+DT3 Hillview,DT5 Beauty World,4,1.362344869,103.7674369,N
+DT5 Beauty World,DT6 King Albert Park,2,1.341223176,103.77581,N
+DT6 King Albert Park,DT7 Sixth Avenue,2,1.335665121,103.7838201,N
+DT7 Sixth Avenue,DT8 Tan Kah Kee,2,1.330786387,103.7972561,N
+DT8 Tan Kah Kee,CC19 DT9 Botanic Gardens,2,1.325883209,103.8073292,N
+CC19 DT9 Botanic Gardens,DT10 TE11 Stevens,2,1.322110193,103.8149876,N
+DT10 TE11 Stevens,NS21 DT11 Newton,2,1.320065557,103.8260263,N
+NS21 DT11 Newton,NE7 DT12 Little India,2,1.3123201,103.8379841,N
+NE7 DT12 Little India,DT13 Rochor,1,1.307198223,103.8485807,N
+DT13 Rochor,EW12 DT14 Bugis,2,1.302257124,103.8515449,N
+EW12 DT14 Bugis,CC4 DT15 Promenade,2,1.300465076,103.8557007,N
+CC4 DT15 Promenade,CE1 DT16 Bayfront,2,1.293218051,103.8609921,N
+CE1 DT16 Bayfront,DT17 Downtown,2,1.281873788,103.8590733,N
+DT17 Downtown,DT18 Telok Ayer,1,1.27944619,103.8528356,N
+DT18 Telok Ayer,NE4 DT19 Chinatown,1,1.282289536,103.8482991,N
+NE4 DT19 Chinatown,DT20 Fort Canning,2,1.284359578,103.8434242,N
+DT20 Fort Canning,DT21 Bencoolen,2,1.292478928,103.8443255,N
+DT21 Bencoolen,DT22 Jalan Besar,2,1.29886427,103.8503799,N
+DT22 Jalan Besar,DT23 Bendemeer,2,1.305004,103.8553387,N
+DT23 Bendemeer,DT24 Geylang Bahru,2,1.313672233,103.8629702,N
+DT24 Geylang Bahru,DT25 Mattar,2,1.321505838,103.8718904,N
+DT25 Mattar,CC10 DT26 MacPherson,2,1.326876715,103.8832341,N
+CC10 DT26 MacPherson,DT27 Ubi,2,1.326345372,103.8902718,N
+DT27 Ubi,DT28 Kaki Bukit,2,1.329956826,103.8992348,N
+DT28 Kaki Bukit,DT29 Bedok North,2,1.334967302,103.9084393,N
+DT29 Bedok North,DT30 Bedok Reservoir,2,1.334742117,103.9179554,N
+DT30 Bedok Reservoir,DT31 Tampines West,2,1.33660783,103.9322077,N
+DT31 Tampines West,EW2 DT32 Tampines,2,1.345515305,103.938408,N
+EW2 DT32 Tampines,DT33 Tampines East,2,1.353301356,103.9451175,N
+DT33 Tampines East,DT34 Upper Changi,3,1.356191483,103.9546005,N
+DT34 Upper Changi,CG1 DT35 Expo,2,1.341737484,103.9614367,N
+CG2 Changi Aiport,CG1 DT35 Expo,8,1.354421916,103.9866311,N
+CG1 DT35 Expo,EW4 CG Tanah Merah,3,1.334613662,103.9570562,N
+NS1 EW24 Jurong East,NS2 Bukit Batok,3,1.33315262,103.7423112,N
+NS2 Bukit Batok,NS3 Bukit Gombak,2,1.349034109,103.74959,N
+NS3 Bukit Gombak,NS4 BP1 Choa Chu Kang,4,1.358761857,103.7519164,N
+NS4 BP1 Choa Chu Kang,NS5 Yew Tee,2,1.385361693,103.744367,N
+NS5 Yew Tee,NS7 Kranji,5,1.397535018,103.7474307,N
+NS7 Kranji,NS8 Marsiling,2,1.425177699,103.7621874,N
+NS8 Marsiling,NS9 TE2 Woodlands,3,1.432514421,103.77409,N
+NS9 TE2 Woodlands,NS10 Admiralty,2,1.436875128,103.7864999,N
+NS10 Admiralty,NS11 Sembawang,3,1.440585001,103.8009982,N
+NS11 Sembawang,NS12 Canberra,4,1.449050821,103.8200504,N
+NS12 Canberra,NS13 Yishun,2,1.443056,103.829722,N
+NS13 Yishun,NS14 Khatib,2,1.429443081,103.8350045,N
+NS14 Khatib,NS15 Yio Chu Kang,6,1.41738337,103.83298,N
+NS15 Yio Chu Kang,NS16 Ang Mo Kio,2,1.381756046,103.8449439,N
+NS16 Ang Mo Kio,NS17 CC15 Bishan,2,1.369347304,103.8499283,N
+NS17 CC15 Bishan,NS18 Braddell,2,1.350838988,103.8481398,N
+NS18 Braddell,NS19 Toa Payoh,2,1.340471684,103.8467942,N
+NS19 Toa Payoh,NS20 Novena,2,1.332628987,103.8474979,N
+NS20 Novena,NS21 DT11 Newton,2,1.320440791,103.8438228,N
+NS21 DT11 Newton,NS22 TE14 Orchard,2,1.3123201,103.8379841,N
+NS22 TE14 Orchard,NS23 Somerset,2,1.303981012,103.8322417,N
+NS23 Somerset,NS24 NE6 CC1 Dhoby Ghaut,1,1.300260055,103.8390737,N
+NS24 NE6 CC1 Dhoby Ghaut,NS25 EW13 City Hall,2,1.298701307,103.8461119,N
+NS25 EW13 City Hall,NS26 EW14 Raffles Place,2,1.292936243,103.852581,N
+NS26 EW14 Raffles Place,NS27 CE2 TE20 Marina Bay,2,1.284125611,103.8514572,N
+NS27 CE2 TE20 Marina Bay,NS28 Marina South Pier,2,1.276427355,103.8545925,N
+NS28 Marina South Pier,NS27 CE2 TE20 Marina Bay,2,1.26924059,103.8579416,N
+NE17 PTC Punggol,PE1 Cove,4,1.404546728,103.902052,N
+PE1 Cove,PE2 Meridian,1,1.399281985,103.9059403,N
+PE2 Meridian,PE3 Coral Edge,2,1.396912053,103.9089277,N
+PE3 Coral Edge,PE4 Riviera,1,1.393909226,103.9125574,N
+PE4 Riviera,PE5 Kadaloor,2,1.394524496,103.9161415,N
+PE5 Kadaloor,PE6 Oasis,1,1.399584853,103.9164619,N
+PE6 Oasis,PE7 Damai,2,1.402286677,103.9127036,N
+PE7 Damai,NE17 PTC Punggol,2,1.402886722,103.9053214,N
+NE17 PTC Punggol,PW1 Sam Kee,2,1.404546728,103.902052,N
+PW1 Sam Kee,PW3 Punggol Point,2,1.409612685,103.9048099,N
+PW3 Punggol Point,PW4 Samudera,1,1.41684852,103.9066284,N
+PW4 Samudera,PW5 Nibong,1,1.415901719,103.9021353,N
+PW5 Nibong,PW6 Sumang,1,1.411870458,103.9002935,N
+PW6 Sumang,PW7 Soo Teck,1,1.408452426,103.8985387,N
+PW7 Soo Teck,NE17 PTC Punggol,3,1.402886722,103.9053214,N
+NE16 STC Sengkang,SE1 Compassvale,6,1.391694626,103.8954664,N
+SE1 Compassvale,SE2 Rumbia,1,1.394493046,103.9004726,N
+SE2 Rumbia,SE3 Bakau,1,1.391468497,103.9059522,N
+SE3 Bakau,SE4 Kangkar,1,1.388092704,103.9054179,N
+SE4 Kangkar,SE5 Ranggung,1,1.383978902,103.9021539,N
+SE5 Ranggung,NE16 STC Sengkang,2,1.402886722,103.9053214,N
+NE16 STC Sengkang,SW1 Cheng Lim,4,1.391694626,103.8954664,N
+SW1 Cheng Lim,SW2 Farmway,2,1.396277631,103.8937792,N
+SW2 Farmway,SW3 Kupang,1,1.397170196,103.8892882,N
+SW3 Kupang,SW4 Thanggam,1,1.398212828,103.881242,N
+SW4 Thanggam,SW5 Fernvale,1,1.397318155,103.8756226,N
+SW5 Fernvale,SW6 Layar,2,1.391885888,103.8762959,N
+SW6 Layar,SW7 Tongkang,1,1.392079839,103.8800158,N
+SW7 Tongkang,SW8 Renjong,1,1.389347953,103.8858287,N
+SW8 Renjong,NE16 STC Sengkang,2,1.402886722,103.9053214,N
+NS24 NE6 CC1 Dhoby Ghaut,CC2 Bras Basah,2,1.298701307,103.8461119,N
+CC2 Bras Basah,CC3 Esplanade,2,1.296861687,103.8506629,N
+CC3 Esplanade,CC4 DT15 Promenade,2,1.293321608,103.8554985,N
+CC4 DT15 Promenade,CC5 Nicoll Highway,2,1.293218051,103.8609921,N
+CC5 Nicoll Highway,CC6 Stadium,2,1.299766835,103.8636292,N
+CC6 Stadium,CC7 Mountbatten,2,1.30284063,103.8753395,N
+CC7 Mountbatten,CC8 Dakota,2,1.306201905,103.8825153,N
+CC8 Dakota,EW8 CC9 Paya Lebar,2,1.30838264,103.888648,N
+EW8 CC9 Paya Lebar,CC10 DT26 MacPherson,2,1.318112082,103.8930446,N
+CC10 DT26 MacPherson,CC11 Tai Seng,2,1.326345372,103.8902718,N
+CC11 Tai Seng,CC12 Bartley,2,1.335433322,103.88818,N
+CC12 Bartley,NE12 CC13 Serangoon,3,1.342828338,103.8797462,N
+NE12 CC13 Serangoon,CC14 Lorong Chuan,2,1.349707875,103.8735637,N
+CC14 Lorong Chuan,NS17 CC15 Bishan,3,1.351636,103.864064,N
+NS17 CC15 Bishan,CC16 Marymount,3,1.350838988,103.8481398,N
+CC16 Marymount,CC17 TE9 Caldecott,2,1.348707263,103.8394214,N
+CC17 TE9 Caldecott,CC19 DT9 Botanic Gardens,5,1.337761,103.839447,N
+CC19 DT9 Botanic Gardens,CC20 Farrer Road,2,1.322110193,103.8149876,N
+CC20 Farrer Road,CC21 Holland Village,3,1.317510612,103.8075929,N
+CC21 Holland Village,EW21 CC22 Buona Vista,2,1.31183479,103.7962016,N
+EW21 CC22 Buona Vista,CC23 one-north,2,1.307183467,103.7902028,N
+CC23 one-north,CC24 Kent Ridge,2,1.299759879,103.7874693,N
+CC24 Kent Ridge,CC25 Haw Par Villa,2,1.293462633,103.7846438,N
+CC25 Haw Par Villa,CC26 Pasir Panjang,2,1.282542157,103.7818234,N
+CC26 Pasir Panjang,CC27 Labrador Park,3,1.276213523,103.7913607,N
+CC27 Labrador Park,CC28 Telok Blangah,2,1.272332732,103.8029471,N
+CC28 Telok Blangah,NE1 CC29 HarbourFront,2,1.270753211,103.8097544,N
+EW1 Pasir Ris,EW2 DT32 Tampines,2,1.372983774,103.9492348,N
+EW2 DT32 Tampines,EW3 Simei,3,1.353301356,103.9451175,N
+EW3 Simei,EW4 CG Tanah Merah,3,1.343202895,103.9533387,N
+EW4 CG Tanah Merah,EW5 Bedok,3,1.327187135,103.9463161,N
+EW5 Bedok,EW6 Kembangan,2,1.323979969,103.9299587,N
+EW6 Kembangan,EW7 Eunos,2,1.321038249,103.9129282,N
+EW7 Eunos,EW8 CC9 Paya Lebar,2,1.319778952,103.9032339,N
+EW8 CC9 Paya Lebar,EW9 Aljunied,2,1.318112082,103.8930446,N
+EW9 Aljunied,EW10 Kallang,2,1.316432612,103.882893,N
+EW10 Kallang,EW11 Lavender,2,1.31148891,103.8713766,N
+EW11 Lavender,EW12 DT14 Bugis,2,1.30735702,103.8628215,N
+EW12 DT14 Bugis,NS25 EW13 City Hall,2,1.300465076,103.8557007,N
+NS25 EW13 City Hall,NS26 EW14 Raffles Place,2,1.292936243,103.852581,N
+NS26 EW14 Raffles Place,EW15 Tanjong Pagar,2,1.284125611,103.8514572,N
+EW15 Tanjong Pagar,EW16 NE3 TE17 Outram Park,2,1.276521247,103.8458611,N
+EW16 NE3 TE17 Outram Park,EW17 Tiong Bahru,2,1.279764543,103.8395732,N
+EW17 Tiong Bahru,EW18 Redhill,2,1.286193393,103.827021,N
+EW18 Redhill,EW19 Queenstown,2,1.289562726,103.8168209,N
+EW19 Queenstown,EW20 Commonwealth,2,1.294860933,103.8058913,N
+EW20 Commonwealth,EW21 CC22 Buona Vista,2,1.302438735,103.7983136,N
+EW21 CC22 Buona Vista,EW22 Dover,2,1.307183467,103.7902028,N
+EW22 Dover,EW23 Clementi,3,1.311405293,103.7786522,N
+EW23 Clementi,NS1 EW24 Jurong East,4,1.314954492,103.7653168,N
+NS1 EW24 Jurong East,EW25 Chinese Garden,2,1.33315262,103.7423112,N
+EW25 Chinese Garden,EW26 Lakeside,2,1.342352821,103.7326244,N
+EW26 Lakeside,EW27 Boon Lay,3,1.344259249,103.7209802,N
+EW27 Boon Lay,EW28 Pioneer,2,1.338604054,103.7060994,N
+EW28 Pioneer,EW29 Joo Koon,4,1.337586882,103.6973586,N
+EW29 Joo Koon,EW30 Gul Circle,3,1.327717173,103.6784167,N
+EW30 Gul Circle,EW31 Tuas Crescent,2,1.319505215,103.6605988,N
+EW31 Tuas Crescent,EW32 Tuas West Road,2,1.321026553,103.6491245,N
+EW32 Tuas West Road,EW33 Tuas Link,1,1.329989089,103.6396662,N
+EW33 Tuas Link,EW32 Tuas West Road,1,1.334793,103.637204,N
+DT13 Rochor,DT22 Jalan Besar,3,1.302257124,103.8515449,Y
+TE1 Woodlands North,NS9 TE2 Woodlands,2,1.448226833,103.7858654,N
+NS9 TE2 Woodlands,TE3 Woodlands South,2,1.437270155,103.7877184,N
+TE3 Woodlands South,TE4 Springleaf,7,1.427619336,103.7938348,N
+TE4 Springleaf,TE5 Lentor,4,1.397580435,103.8188973,N
+TE5 Lentor,TE6 Mayflower,2,1.38456991,103.837087,N
+TE6 Mayflower,TE7 Bright Hill,1,1.372795759,103.8373586,N
+TE7 Bright Hill,TE8 Upper Thomson,2,1.363301808,103.8336619,N
+TE8 Upper Thomson,CC17 TE9 Caldecott,3,1.354186215,103.8345315,N
+CC17 TE9 Caldecott,DT10 TE11 Stevens,5,1.337630816,103.8400818,N
+DT10 TE11 Stevens,TE12 Napier,2,1.319946924,103.8260322,N
+TE12 Napier,TE13 Orchard Boulevard,1,1.306060405,103.8198845,N
+TE13 Orchard Boulevard,NS22 TE14 Orchard,1,1.302599651,103.8241571,N
+NS22 TE14 Orchard,TE15 Great World,3,1.303269537,103.8318615,N
+TE15 Great World,TE16 Havelock,1,1.294999299,103.8338365,N
+TE16 Havelock,EW16 NE3 TE17 Outram Park,1,1.290336281,103.8334412,N
+EW16 NE3 TE17 Outram Park,TE18 Maxwell,1,1.281450562,103.83913,N
+TE18 Maxwell,TE19 Shenton Way,1,1.280785634,103.8446019,N
+TE19 Shenton Way,NS27 CE2 TE20 Marina Bay,1,1.277834239,103.8511535,N
+NS27 CE2 TE20 Marina Bay,TE22 Gardens By the Bay,2,1.276165076,103.8550929,N
+TE22 Gardens By the Bay,NS27 CE2 TE20 Marina Bay,2,1.282375,103.864273,N
