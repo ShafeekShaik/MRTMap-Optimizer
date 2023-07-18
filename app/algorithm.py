@@ -179,7 +179,7 @@ def visualize_graph_folium(graph, shortest_path):
     average_lon = sum(lon for _, lon in coordinates) / len(coordinates)
 
     # Create a Folium map centered at the average coordinates
-    m = folium.Map(location=[average_lat, average_lon], zoom_start=14)
+    m = folium.Map(location=[average_lat, average_lon], zoom_start=12)
 
     # Create a Folium map centered at the first node coordinates
     #m = folium.Map(location=list(graph.node_coordinates.values())[0], zoom_start=14)
@@ -223,7 +223,7 @@ def visualizeshort_graph_folium(graph, shortest_path):
     nodes_list = list(graph.get_nodes())
 
     # Create a Folium map centered at the first node coordinates
-    m = folium.Map(location=list(graph.node_coordinates.values())[0], zoom_start=14)
+    m = folium.Map(location=list(graph.node_coordinates.values())[0], zoom_start=10)
     
 
     # Iterate over the edges and add them to the map
