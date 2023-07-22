@@ -119,22 +119,61 @@ def dijkstra_algorithm(graph, start_node):
     return previous_nodes, {node: shortest_path[node] for node in previous_nodes if node != start_node}
 
     
-def print_result(previous_nodes, shortest_path, start_node, target_node):
+# def print_result(previous_nodes, shortest_path, start_node, target_node):
+#     path = []
+#     node = target_node
+
+#     while node != start_node:
+#         path.append(node)
+#         node = previous_nodesD[node]
+
+#     # Add the start node manually
+#     path.append(start_node)
+
+#     timing = "The following journey will take {} minutes long.".format(shortest_path[target_node])
+#     path = " -> ".join(reversed(path))
+
+#     return timing, path
+
+def print_result(previous_nodes, shortest_path, start_node, target_node, graph):
     path = []
+    total_time = 0
+    total_walk_time = 0
     node = target_node
 
     while node != start_node:
         path.append(node)
-        node = previous_nodes[node]
+        prev_node = previous_nodes[node]
+        time, walk = graph.value(prev_node, node)
+        total_time += time
+        if walk == "Y":
+            total_walk_time += time
+        node = prev_node
 
     # Add the start node manually
     path.append(start_node)
 
-    print("We found the following best path with a value of {}.".format(shortest_path[target_node]))
-    bruh = " -> ".join(reversed(path))
+    # Reverse the path to get the correct order
+    path = list(reversed(path))
 
-    return bruh
+    timing = "The following journey will take {} minutes long, including {} minutes of walking.".format(shortest_path[target_node], total_walk_time)
+    # print("Path:")
+    path_taken = f"{path[0]}"
+    for i in range(len(path) - 1):
+        from_node = path[i]
+        to_node = path[i + 1]
+        distance, walk = graph.value(from_node, to_node)
 
+        if walk == "Y":
+            path_taken += f" -- walk to --> {to_node}"
+        else:
+            path_taken += f" --> {to_node}"
+            
+    fol_path = " -> ".join(path)
+    # path_taken += "Total Time: {} km".format(total_time)
+    # path_taken += "Total Walk Time: {} km".format(total_walk_time)
+    # return " -> ".join(path)
+    return fol_path, timing, path_taken
 
 
 def visualize_graph(graph, shortest_path):
@@ -305,8 +344,8 @@ def short_path_finder(start,end):
     start_node = start
     target_node = end
     previous_nodes, shortest_path = dijkstra_algorithm(graph=graph, start_node = start_node)
-    shortest_path = print_result(previous_nodes, shortest_path, start_node, target_node)
+    shortest_path,timing, path_taken  = print_result(previous_nodes, shortest_path, start_node, target_node, graph)
     m = visualize_graph_folium(graph, shortest_path)
     m.save("app/templates/shortest_path_map.html")
-    return shortest_path
+    return timing, path_taken
 

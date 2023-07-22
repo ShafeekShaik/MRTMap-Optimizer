@@ -29,11 +29,11 @@ def index():
         print(startpoint)
         print(endpoint)
         searched=True
-        path = short_path_finder(startpoint, endpoint)
+        timing, path = short_path_finder(startpoint, endpoint)
     else:
         path = ""
-
-    return render_template('index.html', title='Home', form=form, path=path, mrt_names=mrt_names,searched=searched)
+        timing = ""
+    return render_template('index.html', title='Home', form=form, timing=timing, path=path, mrt_names=mrt_names,searched=searched)
 
 
 @app.route('/whosnothere')
@@ -42,7 +42,7 @@ def whosnothere():
     date_object = datetime.date.today()
     presents = Attendance.query.filter_by(date=date_object)
     student = Students.query.all()
-    for s in student:
+    for s in student:   
         p = Attendance.query.filter_by(date=date_object, s_id=s.s_id).first()
         if p is None:
             not_h = [s.s_id, s.s_name, s.class_code]
