@@ -27,10 +27,15 @@ def index():
         endpoint = request.values.get('endpoint')  # input names
         print(startpoint)
         print(endpoint)
-        if startpoint not in mrt_names or endpoint not in mrt_names:
-            flash("Startpoint or endpoint is not an MRT station")
+        if startpoint not in mrt_names:
+            flash("Startpoint is not an MRT station")
             path = ""
             timing = ""
+        elif  endpoint not in mrt_names:
+            flash("Endpoint is not an MRT station")
+            path = ""
+            timing = ""
+
             
         else:
             searched=True

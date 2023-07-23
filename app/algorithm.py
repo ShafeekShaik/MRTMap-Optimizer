@@ -133,9 +133,6 @@ def print_result(previous_nodes, shortest_path, start_node, target_node, graph):
             path_taken += f" --> {to_node}"
             
     fol_path = " -> ".join(path)
-    # path_taken += "Total Time: {} km".format(total_time)
-    # path_taken += "Total Walk Time: {} km".format(total_walk_time)
-    # return " -> ".join(path)
     return fol_path, timing, path_taken
 
 
