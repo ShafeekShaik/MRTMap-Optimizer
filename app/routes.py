@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, flash
 from app import app
 from app.forms import PathForm
 from flask import request
@@ -6,7 +6,6 @@ from app.algorithm import short_path_finder
 from config import basedir
 import csv
 import os
-print(os.path.dirname(__file__))
 
 mrt_names= []
 csv_file= os.path.join(basedir,'app','mrt.csv')
@@ -28,8 +27,14 @@ def index():
         endpoint = request.values.get('endpoint')  # input names
         print(startpoint)
         print(endpoint)
-        searched=True
-        timing, path = short_path_finder(startpoint, endpoint)
+        if startpoint not in mrt_names or endpoint not in mrt_names:
+            flash("Startpoint or endpoint is not an MRT station")
+            path = ""
+            timing = ""
+            
+        else:
+            searched=True
+            timing, path = short_path_finder(startpoint, endpoint)
     else:
         path = ""
         timing = ""
