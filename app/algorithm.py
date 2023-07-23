@@ -39,28 +39,6 @@ class Graph(object):
 
         return graph
         
-    # def construct_graph(self, csv_file):
-        # graph = {}
-        # for node in self.nodes:
-            
-            # graph[node] = {}
-
-        # with open(csv_file, 'r') as csvfile:
-            # reader = csv.DictReader(csvfile)
-            # for row in reader:
-                # source = row['Source']
-                # target = row['Target']
-                # weight = int(row['Weight'])
-
-                # if source not in graph:
-                    # graph[source] = {}
-                # if target not in graph:
-                    # graph[target] = {}
-
-                # graph[source][target] = weight
-                # graph[target][source] = weight
-        # return graph
-    
     def get_nodes(self):
         return self.nodes
 
@@ -119,22 +97,6 @@ def dijkstra_algorithm(graph, start_node):
     return previous_nodes, {node: shortest_path[node] for node in previous_nodes if node != start_node}
 
     
-# def print_result(previous_nodes, shortest_path, start_node, target_node):
-#     path = []
-#     node = target_node
-
-#     while node != start_node:
-#         path.append(node)
-#         node = previous_nodesD[node]
-
-#     # Add the start node manually
-#     path.append(start_node)
-
-#     timing = "The following journey will take {} minutes long.".format(shortest_path[target_node])
-#     path = " -> ".join(reversed(path))
-
-#     return timing, path
-
 def print_result(previous_nodes, shortest_path, start_node, target_node, graph):
     path = []
     total_time = 0
@@ -285,55 +247,6 @@ def visualizeshort_graph_folium(graph, shortest_path):
 
     return m
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# short_path("DT22 Jalan Besar", "DT33 Tampines East")
-
-# nodes = graph.get_nodes()
-# for i in nodes:
-    # print(i)
-    
-#These two are where to input the start and end nodes should be the main concern
-# node = 'CC10 DT26 MacPherson'  # Replace 'A' with the desired node
-
-# neighbors = graph.get_outgoing_edges(node)
-
-# print(f"Neighbors of node {node}:")
-# for neighbor in neighbors:
-#     print(neighbor)
-	
-#print_result(previous_nodes, shortest_path, start_node, target_node)
-# print(shortest_path)
-# visualize_graph(graph,shortest_path)
-
-# csv_file = "mrt.csv"
-# graph = Graph(csv_file)
-# # for node, coordinates in graph.node_coordinates.items():
-#     # print(f"Node: {node}, Coordinates: {coordinates}")
-# start_node = "NE7 DT12 Little India"
-# target_node = "DT33 Tampines East"
-# previous_nodes, shortest_path = dijkstra_algorithm(graph=graph, start_node=start_node)
-# shortest_path = print_result(previous_nodes, shortest_path, start_node, target_node)
-# print(shortest_path)
-# m = visualize_graph_folium(graph, shortest_path)
-# m.save("shortest_path_map.html")
 
 csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/MRTMap-Optimizer/app/mrt.csv"
 
