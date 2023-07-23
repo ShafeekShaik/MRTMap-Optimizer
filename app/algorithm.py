@@ -3,7 +3,8 @@ import csv
 import matplotlib.pyplot as plt
 import networkx as nx
 import folium
- 
+from config import basedir
+import os
 class Graph(object):
     def __init__(self, csv_file):
         self.nodes = set()
@@ -248,7 +249,7 @@ def visualizeshort_graph_folium(graph, shortest_path):
     return m
 
 
-csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/MRTMap-Optimizer/app/mrt.csv"
+csv_file= csv_file= os.path.join(basedir,'app','mrt.csv')
 
 graph = Graph(csv_file)
 

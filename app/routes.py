@@ -3,10 +3,14 @@ from app import app
 from app.forms import PathForm
 from flask import request
 from app.algorithm import short_path_finder
+from config import basedir
 import csv
+import os
+print(os.path.dirname(__file__))
 
 mrt_names= []
-csv_file= "S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/MRTMap-Optimizer/app/mrt.csv"
+csv_file= os.path.join(basedir,'app','mrt.csv')
+# basedir"S:/SIT Tri 3/DSAG/Projec/hub/Project_input/Attendance/MRTMap-Optimizer/app/mrt.csv"
 with open(csv_file, 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
